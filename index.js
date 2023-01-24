@@ -14,7 +14,7 @@ app.use(cors({
     origin:"*"
 }))
 app.use(express.json());
-
+mongoose.set('strictQuery', true)
 const connectDB = async () => {
     try {
       const conn = await mongoose.connect(process.env.mongourl);
